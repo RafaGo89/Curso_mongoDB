@@ -17,7 +17,7 @@ db.usuarios.find({correo: "juan@example.com"})
 db.usuarios.find({edad: {$gt: 30}})
 ```
 
-### Lectura de los documentos donde la edad sea mayor o igual 30 años (>)
+### Lectura de los documentos donde la edad sea mayor o igual 30 años (>=)
 ```js
 db.usuarios.find({edad: {$gte: 30}})
 ```
@@ -27,7 +27,7 @@ db.usuarios.find({edad: {$gte: 30}})
 db.usuarios.find({edad: {$lt: 30}})
 ```
 
-### Lectura de los documentos donde la edad sea menor o igual 30 años (<)
+### Lectura de los documentos donde la edad sea menor o igual 30 años (<=)
 ```js
 db.usuarios.find({edad: {$lte: 30}})
 ```
