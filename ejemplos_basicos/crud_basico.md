@@ -16,12 +16,12 @@ db.usuarios.insertOne({
 })
 ```
 
-## Leer todos los documentos de una colección
+### Leer todos los documentos de una colección
 ```js
 db.usuarios.find()
 ```
 
-## Actualizar un campo de un solo documento, actualiza el primero que se encuentre
+### Actualizar un campo de un solo documento, actualiza el primero que se encuentre
 ```js
 db.usuarios.updateOne(
 	{nombre: "Rafael"},
@@ -29,14 +29,15 @@ db.usuarios.updateOne(
 )
 ```
 
-## Eliminar un documento empleando un campo como filtro, elimina el primero que encuentra
+### Eliminar un documento empleando un campo como filtro, elimina el primero que encuentra
 
 ```js
 db.usuarios.deleteOne({edad: 25})
 ```
 
-# Creación de una colección nueva
-## Inserción de nuevos documentos en la colección recién creada
+## Creación de una colección nueva
+
+### Inserción de nuevos documentos en la colección recién creada
 ```js
 db.tareas.insertOne({
 	usuarioId: ObjectId("69547f559fda59cf0bc63f8e"),
@@ -59,11 +60,11 @@ db.tareas.insertOne({
 })
 ```
 
-## Lectura de las tareas asignadas a un usuario en concreto usando su id
+### Lectura de las tareas asignadas a un usuario en concreto usando su id
 ```js
 db.tareas.find({usuarioId: ObjectId("69547f559fda59cf0bc63f8e")})
 ```
-## Actualización del estado de una tarea, usando el id de la tarea como criterio de búsqueda
+### Actualización del estado de una tarea, usando el id de la tarea como criterio de búsqueda
 ```js
 db.tareas.updateOne(
 	{_id: ObjectId("695726d5761354439ecd7cda")},
@@ -71,7 +72,7 @@ db.tareas.updateOne(
 )
 ```
 
-## Actualización de una tarea agregando un nuevo campo, usando el id de la tarea como criterio de busqueda
+### Actualización de una tarea agregando un nuevo campo, usando el id de la tarea como criterio de búsqueda
 ```js
 db.tareas.updateOne(
 	{_id: ObjectId("69572666761354439ecd7cd9")},
@@ -79,7 +80,7 @@ db.tareas.updateOne(
 )
 ```
 
-## Borrado de una tarea usando el id como criterio de busqueda
+### Borrado de una tarea usando el id como criterio de búsqueda
 ```js
 db.tareas.deleteOne({_id: ObjectId("69572666761354439ecd7cd9")})
 ```

@@ -5,18 +5,18 @@
 use  nombreBaseDeDatos
 ```
 
-## Mostrar bases de datos existentes
+### Mostrar bases de datos existentes
 ```js
 show  dbs
 ```
 
-## Mostrar  características  de  una  base  de  datos  en  concreto
+### Mostrar  características  de  una  base  de  datos  en  concreto
 
  ```js
  db.stats()
 ```
 
-## Añadir una colección (tabla) a una base de datos
+### Añadir una colección (tabla) a una base de datos
 ```js
 db.createCollection("usuarios")
 ```
