@@ -55,3 +55,39 @@ db.empleados.insertOne({
   edad: 15
 })
 ```
+
+## Ejemplo de creación de un esquema fijo para los productos de un almacén de un supermercado
+
+```js
+db.createCollection("productos",{
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["nombre", "cantidad", "precio", "esConsumible", "fechaVencimiento"],
+      properties: {
+        nombre: {
+          bsonType: "string",
+          description: "Es una cadena de caracteres"
+        },
+        cantidad: {
+          bsonType: "int",
+          minimum: 0,
+          description: "Debe de ser un entero"
+        },
+        precio: {
+          bsonType: "double",
+          description: "Es un número real"
+        },
+        esConsumible: {
+          bsonType: "bool",
+          description: "Puede ser verdadero o falso"
+        },
+        fechaVencimiento: {
+          bsonType: "date",
+          description: "Esto es una fecha"
+        }
+      }
+    }
+  }
+})
+```
