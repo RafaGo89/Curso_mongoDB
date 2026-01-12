@@ -1,39 +1,48 @@
-﻿# Operadores lógicos
+﻿# Operadores de lógicos
 
-## Permiten realizas filtros o evaluaciones
+## Estos operadores nos permiten combinar varios operadores de comparación para realizar evaluaciones más complejas
 
-### Obtener todos los documentos donde el precio sea igual a 900
+### Encontrar los documentos donde el precio sea mayor a 500 y la existencia mayor o igual a 10
 
 ```js
-db.productos.find({precio: {$eq: 900}})
+db.productos.find({
+  $and: [
+    {precio: {$gt: 500}},
+    {existencia: {$gte: 10}}
+  ]
+})
 ```
 
-### Obtener todos los documentos donde el precio sea mayor a 500
+### Encontrar los documentos donde el precio sea menor a 400 ó que la existencia sea mayor o igual a 20
 
 ```js
-db.productos.find({precio: {$gt: 500}})
+db.productos.find({
+  $or: [
+    {precio: {$lt: 400}},
+    {existencia: {$gte: 20}}
+  ]
+})
 ```
 
-### Obtener todos los documentos donde el precio sea menor a 500
+### Encontrar los documentos donde el precio NO sea mayor a 500 y la existencia mayor o igual a 10
 
 ```js
-db.productos.find({precio: {$lt: 500}})
+db.productos.find({
+  $and: [
+    {precio: {$not: {$gt: 500}}},
+    {existencia: {$gte: 10}}
+  ]
+})
 ```
 
-### Obtener todos los documentos donde la existencia sea mayor o igual a 10
+### Encontrar los documentos donde el nombre del producto sea "Laptop", el precio esté entre 400 y 800, y donde la existencia sea menor a 10
 
 ```js
-db.productos.find({existencia: {$gte: 10}})
-```
-
-### Obtener todos los documentos donde la existencia sea menor o igual a 10
-
-```js
-db.productos.find({existencia: {$lte: 10}})
-```
-
-###  Obtener todos los documentos donde el precio NO sea igual a 900
-
-```js
-db.productos.find({precio: {$ne: 900}})
+db.productos.find({
+  $and: [
+	  {nombre: {$eq: "Laptop"}},
+    {precio: {$gte: 400, $lte: 800}},
+    {existencia: {$lt: 10}}
+  ]
+})
 ```
